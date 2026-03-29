@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #FAFAF8;
+  --color-primary-foreground: #0F172A;
+  
+  --color-secondary: #0F172A;
+  --color-secondary-foreground: #FAFAF8;
+  
+  --color-accent: #2C7A7B;
+  --color-accent-foreground: #FAFAF8;
+  
+  --color-background: #FAFAF8;
+  --color-foreground: #0F172A;
+  
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
+}
+
+@layer base {
+  :root {
+    --background: 60 20% 98%; /* #FAFAF8 */
+    --foreground: 222.2 47.4% 11.2%; /* #0F172A */
+
+    --primary: 60 20% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 60 20% 98%;
+
+    --accent: 180 47% 33%; /* #2C7A7B */
+    --accent-foreground: 60 20% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+  }
+
+  .dark {
+    --background: 222.2 47.4% 11.2%;
+    --foreground: 60 20% 98%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 60 20% 98%;
+
+    --secondary: 60 20% 98%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 180 47% 33%;
+    --accent-foreground: 60 20% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-accent selection:text-accent-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
